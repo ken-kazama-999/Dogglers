@@ -16,6 +16,7 @@
 package com.example.dogglers.adapter
 
 import android.content.Context
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,9 +64,8 @@ class DogCardAdapter(
 
         val item = dogs[position]
         holder.dogImage.setImageResource(item.imageResourceId)
-        holder.dogName.text = resources!!.getString(R.string.dog_name, item.name)
-        holder.dogAge.text = resources.getString(R.string.dog_age, item.age)
-        holder.dogHobby.text = resources.getString(R.string.dog_hobbies, item.hobbies)
-
+        holder.dogName.text = item.name;
+        holder.dogAge.text = item.age
+        holder.dogHobby.text = item.hobbies
     }
 }
